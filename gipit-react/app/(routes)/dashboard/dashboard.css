@@ -1,0 +1,29 @@
+.dashboard-header {
+    margin-bottom: 48px;
+  
+    h1 {
+      margin-bottom: 8px;
+    }
+  
+    p {
+      color: var(--light-secondary);
+    }
+  }
+  
+  .dashboard-stats {
+    h3 {
+      color: var(--light-secondary);
+      margin-bottom: 24px;
+    }
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .time-stats {
+    max-width: 600px;
+  } 
