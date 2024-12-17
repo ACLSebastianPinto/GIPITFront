@@ -1,56 +1,41 @@
-import React from 'react';
-import StatsCard from '@/components/molecules/StatsCard';
-import { IconUsers, IconFolderCheck, IconFolder, IconClock } from '@tabler/icons-react';
-import { fetchDashboardStats } from '@/app/actions/fetchDashboardStats';
+import React from "react";
+import "./dashboard.css";
 
-async function DashboardPage() {
-  const stats = await fetchDashboardStats();
-
+const Dashboard = () => {
   return (
-    <div className="inner-page-container">
-      <div className="dashboard-header">
-        <h1>Hola,</h1>
-        <p className="text-14">Simplifica tu gestión de contrataciones y toma decisiones más rápido</p>
-      </div>
+    <div className="dashboard-container">
+      <div className="main-content">
+        <h1>Hola Carlos,</h1>
+        <p>
+          Simplifica tu gestión de contrataciones y toma decisiones más rápido.
+        </p>
 
-      <div className="dashboard-stats">
-        <h3>Resumen de procesos</h3>
-        <div className="stats-grid">
-          <StatsCard
-            title="Procesos Activos"
-            value={stats.activosCount}
-            subtitle="Hace 2 días"
-            icon={<IconFolder size={24} />}
-            color="var(--primary)"
-          />
-          <StatsCard
-            title="Procesos Cerrados"
-            value={stats.cerradosCount}
-            subtitle="5 en el último trimestre"
-            icon={<IconFolderCheck size={24} />}
-            color="var(--light-secondary)"
-          />
-          <StatsCard
-            title="Profesionales Activos"
-            value={stats.profesionalesCount}
-            subtitle="5 en el último trimestre"
-            icon={<IconUsers size={24} />}
-            color="#4CAF50"
-          />
+        <div className="summary-cards">
+          <div className="card active-processes">
+            <h2>02</h2>
+            <p>Procesos Activos</p>
+          </div>
+          <div className="card closed-processes">
+            <h2>12</h2>
+            <p>Procesos Cerrados</p>
+          </div>
+          <div className="card active-professionals">
+            <h2>23</h2>
+            <p>Profesionales Activos</p>
+          </div>
+          <div className="card average-time">
+            <h2>12 días</h2>
+            <p>Tiempo promedio de contratación</p>
+          </div>
         </div>
 
-        <div className="time-stats">
-          <StatsCard
-            title="Tiempo promedio de cierre"
-            value={stats.tiempoCierre}
-            subtitle="Promedio de últimos 5 procesos"
-            icon={<IconClock size={24} />}
-            color="var(--dark-tertiary)"
-          />
+        <div className="billing-card">
+          <h2>Facturación de Diciembre</h2>
+          <p>$12.000</p>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default DashboardPage; 
+export default Dashboard;
